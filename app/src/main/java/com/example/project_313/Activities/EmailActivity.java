@@ -27,11 +27,9 @@ public class EmailActivity extends AppCompatActivity {
 
     private EditText userMail,userPassword;
     private Button btnLogin;
-    private Button btnRegister;
     private ProgressBar loginProgress;
     private FirebaseAuth mAuth;
     private Intent HomeActivity;
-    private ImageView loginPhoto;
     private TextView errorMsg;
 
 
@@ -58,7 +56,6 @@ public class EmailActivity extends AppCompatActivity {
                 errorMsg.setVisibility(View.INVISIBLE);
                 loginProgress.setVisibility(View.VISIBLE);
                 btnLogin.setVisibility(View.INVISIBLE);
-//                errorMsg.setText("Please Verify all fields");
 
                 final String mail = userMail.getText().toString();
 
@@ -68,7 +65,6 @@ public class EmailActivity extends AppCompatActivity {
                 if (mail.isEmpty() || password.isEmpty()) {
                     errorMsg.setVisibility(View.VISIBLE);
                     errorMsg.setText("Please Verify all fields");
-//                    showMessage("Please verify all Fields");
                     btnLogin.setVisibility(View.VISIBLE);
                     loginProgress.setVisibility(View.INVISIBLE);
                 }
@@ -110,11 +106,6 @@ public class EmailActivity extends AppCompatActivity {
 
     }
 
-    private void showMessage(String text) {
-
-        Toast.makeText(getApplicationContext(),text, Toast.LENGTH_LONG).show();
-
-    }
 
     @Override
     protected void onStart() {
