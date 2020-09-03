@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project_313.R;
@@ -21,8 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 // Facebook
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 
 
 public class EmailActivity extends AppCompatActivity {
@@ -34,39 +32,33 @@ public class EmailActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Intent HomeActivity;
     private ImageView loginPhoto;
+    private TextView errorMsg;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_email);
+
+        getSupportActionBar().hide();
 
         userMail = findViewById(R.id.logName);
         userPassword = findViewById(R.id.logPassword);
         btnLogin = findViewById(R.id.log_btn);
         loginProgress = findViewById(R.id.progressBar2);
         mAuth = FirebaseAuth.getInstance();
+        errorMsg = findViewById(R.id.logError);
         HomeActivity = new Intent(this,com.example.project_313.Activities.HomeActivity.class);
-        btnRegister = findViewById(R.id.reg_btn);
 
-//        loginPhoto = findViewById(R.id.logUserPic);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent registerActivity = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(registerActivity);
-                finish();
-
-            }
-        });
-
+        errorMsg.setVisibility(View.INVISIBLE);
         loginProgress.setVisibility(View.INVISIBLE);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                errorMsg.setVisibility(View.INVISIBLE);
                 loginProgress.setVisibility(View.VISIBLE);
                 btnLogin.setVisibility(View.INVISIBLE);
+//                errorMsg.setText("Please Verify all fields");
 
                 final String mail = userMail.getText().toString();
 
@@ -74,7 +66,9 @@ public class EmailActivity extends AppCompatActivity {
                 final String password = userPassword.getText().toString();
 
                 if (mail.isEmpty() || password.isEmpty()) {
-                    showMessage("Please verify all Fields");
+                    errorMsg.setVisibility(View.VISIBLE);
+                    errorMsg.setText("Please Verify all fields");
+//                    showMessage("Please verify all Fields");
                     btnLogin.setVisibility(View.VISIBLE);
                     loginProgress.setVisibility(View.INVISIBLE);
                 }
@@ -98,7 +92,9 @@ public class EmailActivity extends AppCompatActivity {
                     updateUI();
                 }
                 else {
-                    showMessage(task.getException().getMessage());
+                    errorMsg.setVisibility(View.VISIBLE);
+                    errorMsg.setText((task.getException().getMessage()));
+//                    showMessage(task.getException().getMessage());
                     btnLogin.setVisibility(View.VISIBLE);
                     loginProgress.setVisibility(View.INVISIBLE);
                 }

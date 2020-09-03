@@ -23,7 +23,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 updateUI();
             }
-        }, 3000);
+        }, 2000);
     }
 
     private void updateUI() {

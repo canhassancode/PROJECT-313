@@ -7,5 +7,15 @@
 
     <color name="darkBlue">#272641</color>
     <color name="darkGrey">#211215</color>
+    <color name="darkGrey2">#121421</color>
     <color name="pink">#d22c47</color>
+
+
+<!--    FACEBOOK, GOOGLE AND OTHER COLOURS BELOW-->
+    <color name="facebookColour">#4267B2</color>
+    <color name="googleColour">#DB4437</color>
+    <color name="colourBlack">#000000</color>
+    <color name="offWhite">#f5f2d0</color>
+
+
 </resources>
