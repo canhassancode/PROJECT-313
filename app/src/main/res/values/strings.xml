@@ -13,4 +13,6 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_home2">Home</string>
     <string name="title_activity_navigation">navigation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
