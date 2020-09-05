@@ -1,5 +1,7 @@
 package com.example.project_313;
 
+import android.widget.TextView;
+
 public class NohayModel {
 
     public String noha;
@@ -30,6 +32,7 @@ public class NohayModel {
     public String getTitle() {
         return title;
     }
+
 
     public void setTitle(String title) {
 

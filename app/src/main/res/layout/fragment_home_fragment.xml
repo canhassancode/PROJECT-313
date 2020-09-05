@@ -4,19 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home_fragment"
-    android:background="@color/darkGrey2">
+    android:background="#EFECEC">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fontFamily="@font/adam_bold"
-        android:gravity="center"
-        android:text="HOME PAGE"
-        android:textAlignment="center"
-        android:textColor="@color/offWhite"
-        android:textSize="20sp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/noha_list"

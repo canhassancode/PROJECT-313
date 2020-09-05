@@ -9,6 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.NohaFullScreen"></activity>
         <activity android:name=".Activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.EmailActivity"></activity>
+        <activity android:name=".Activities.EmailActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.RegisterActivity" />
     </application>
