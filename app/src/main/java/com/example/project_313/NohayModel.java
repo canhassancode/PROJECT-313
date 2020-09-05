@@ -2,15 +2,15 @@ package com.example.project_313;
 
 public class NohayModel {
 
-    private String noha;
+    public String noha;
 
     // May not be required
-    private String title;
+    public String title;
 
 
-    private NohayModel() {}
+    public NohayModel() {}
 
-    private NohayModel(String Noha) {
+    public NohayModel(String Noha) {
         this.noha = Noha;
     }
 
