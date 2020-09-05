@@ -24,16 +24,21 @@
     <fragment
         android:id="@+id/fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/navigation_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         app:navGraph="@navigation/main_nav" />
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,8 +57,7 @@
                 android:id="@+id/imageView5"
                 android:layout_width="90dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/logo_crop"
-                />
+                app:srcCompat="@drawable/logo_crop" />
 
         </androidx.appcompat.widget.Toolbar>
 

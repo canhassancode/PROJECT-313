@@ -4,8 +4,9 @@ public class NohayModel {
 
     public String noha;
 
-    // May not be required
     public String title;
+
+    public String category;
 
 
     public NohayModel() {}
@@ -14,20 +15,34 @@ public class NohayModel {
         this.noha = Noha;
     }
 
+
+    // NOHA
     public String getNoha() {
-        return noha;
+        String newNoha = noha.replace('.','\n');
+        return newNoha;
     }
 
     public void setNoha(String noha) {
         this.noha = noha;
     }
 
-
+    // TITLE
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
+
         this.title = title;
+    }
+
+    //CATEGORY
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+
+        this.category = category;
     }
 }

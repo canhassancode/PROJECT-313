@@ -51,7 +51,7 @@ public class home_fragment extends Fragment {
 
         adapter = new NohaAdapter(options);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),
-                LinearLayoutManager.HORIZONTAL, false);
+                LinearLayoutManager.VERTICAL, false);
         mFirestoreList.setLayoutManager(linearLayoutManager);
         mFirestoreList.setAdapter(adapter);
     }
